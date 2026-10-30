@@ -1,0 +1,331 @@
+{
+  "disease": "heart",
+  "name": "Heart Disease",
+  "trained_at": "2026-10-30T17:25:44+00:00",
+  "status": "available",
+  "status_reasons": [],
+  "data_caveats": [],
+  "probability_supported": true,
+  "probability_reason": "Sigmoid-calibrated probabilities met the criteria on held-out data (ECE 0.097 <= 0.1, Brier skill score 0.639 > 0)",
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "model_sha256": "dc13b00481d7f2ca3e7c0bf5e4fc476890a17cf7eb0d45a9206a9ca2274f7c0e",
+  "algorithm": "logistic_regression",
+  "algorithm_name": "Logistic Regression",
+  "calibration": "sigmoid (Platt) via CalibratedClassifierCV, cv=5, fit on training split only",
+  "decision_threshold": 0.5,
+  "dataset": {
+    "description": "UCI Heart Disease (Cleveland subset, 303 patients)",
+    "file": "heart_cleveland.csv",
+    "sha256": "68b13ff5bc336b0b60bd026879a8e6fb716b2bd008f3b1ea6ada30a5549c54de",
+    "rows_raw": 303,
+    "rows_used": 303,
+    "train_rows": 242,
+    "test_rows": 61,
+    "train_prevalence": 0.45867768595041325
+  },
+  "integrity": {
+    "flags": [],
+    "exact_duplicate_rows": 0,
+    "conflicting_label_duplicates": 0,
+    "class_counts": {
+      "0": 164,
+      "1": 139
+    },
+    "missing_percent": {
+      "ca": 1.3,
+      "thal": 0.7
+    },
+    "single_feature_auc": {
+      "thal": 0.766,
+      "cp": 0.754,
+      "ca": 0.75,
+      "thalach": 0.745,
+      "oldpeak": 0.735,
+      "exang": 0.703,
+      "slope": 0.689,
+      "age": 0.637,
+      "sex": 0.63,
+      "restecg": 0.585,
+      "trestbps": 0.574,
+      "chol": 0.57,
+      "fbs": 0.509
+    },
+    "missingness_auc": 0.505,
+    "mean_missing_per_row_by_class": {
+      "0": 0.02,
+      "1": 0.01
+    }
+  },
+  "cv": {
+    "scheme": "RepeatedStratifiedKFold(5 folds x 3 repeats), training split only",
+    "results": {
+      "logistic_regression": {
+        "roc_auc": {
+          "mean": 0.8917292583959251,
+          "std": 0.04251265732793956
+        },
+        "accuracy": {
+          "mean": 0.8209467120181404,
+          "std": 0.04630018533035308
+        },
+        "f1": {
+          "mean": 0.7969521751507421,
+          "std": 0.05214445487541038
+        },
+        "recall": {
+          "mean": 0.7681159420289855,
+          "std": 0.07496578838432835
+        },
+        "precision": {
+          "mean": 0.8365428467525656,
+          "std": 0.07612850120774299
+        }
+      },
+      "decision_tree": {
+        "roc_auc": {
+          "mean": 0.8108727558002918,
+          "std": 0.07053986050644484
+        },
+        "accuracy": {
+          "mean": 0.7590419501133786,
+          "std": 0.07211189631867038
+        },
+        "f1": {
+          "mean": 0.7294362921312734,
+          "std": 0.07133704114536352
+        },
+        "recall": {
+          "mean": 0.7048748353096179,
+          "std": 0.08246157782844173
+        },
+        "precision": {
+          "mean": 0.7664680916168332,
+          "std": 0.10149376022399632
+        }
+      },
+      "knn": {
+        "roc_auc": {
+          "mean": 0.8839434853927607,
+          "std": 0.044897909400181596
+        },
+        "accuracy": {
+          "mean": 0.8001984126984127,
+          "std": 0.047676326769629344
+        },
+        "f1": {
+          "mean": 0.7677500692624053,
+          "std": 0.06154083763660968
+        },
+        "recall": {
+          "mean": 0.7292490118577076,
+          "std": 0.09082312484645104
+        },
+        "precision": {
+          "mean": 0.8176276318816366,
+          "std": 0.05372823529030048
+        }
+      },
+      "svm_rbf": {
+        "roc_auc": {
+          "mean": 0.8842139342139342,
+          "std": 0.04373294327559807
+        },
+        "accuracy": {
+          "mean": 0.8030612244897958,
+          "std": 0.05027258061325312
+        },
+        "f1": {
+          "mean": 0.7769334859340119,
+          "std": 0.06301727969913913
+        },
+        "recall": {
+          "mean": 0.7561264822134387,
+          "std": 0.09567286005478301
+        },
+        "precision": {
+          "mean": 0.8096495572117235,
+          "std": 0.07641816230942237
+        }
+      },
+      "random_forest": {
+        "roc_auc": {
+          "mean": 0.8935396326700675,
+          "std": 0.041742088370612364
+        },
+        "accuracy": {
+          "mean": 0.8126133786848072,
+          "std": 0.05045689050848327
+        },
+        "f1": {
+          "mean": 0.7893712219380639,
+          "std": 0.0588076371010676
+        },
+        "recall": {
+          "mean": 0.7710144927536231,
+          "std": 0.0842922380140821
+        },
+        "precision": {
+          "mean": 0.8157975112337746,
+          "std": 0.07076084655111287
+        }
+      },
+      "gradient_boosting": {
+        "roc_auc": {
+          "mean": 0.8665884035449253,
+          "std": 0.04431972013606467
+        },
+        "accuracy": {
+          "mean": 0.7797052154195011,
+          "std": 0.044306683362086326
+        },
+        "f1": {
+          "mean": 0.7577000679510355,
+          "std": 0.05584451957679228
+        },
+        "recall": {
+          "mean": 0.7592885375494071,
+          "std": 0.08794562626229678
+        },
+        "precision": {
+          "mean": 0.7614656205333282,
+          "std": 0.049196421744264925
+        }
+      }
+    }
+  },
+  "selection_rule": "highest mean CV ROC-AUC; simplest model within 0.01 preferred",
+  "test_metrics": {
+    "n": 61,
+    "accuracy": 0.8688524590163934,
+    "majority_baseline_accuracy": 0.540983606557377,
+    "precision": 0.8125,
+    "recall": 0.9285714285714286,
+    "specificity": 0.8181818181818182,
+    "f1": 0.8666666666666667,
+    "roc_auc": 0.9577922077922079,
+    "brier": 0.08964888698088934,
+    "brier_reference": 0.2483204587163154,
+    "brier_skill_score": 0.6389790537423845,
+    "ece": 0.09703568188570791,
+    "confusion_matrix": {
+      "tn": 27,
+      "fp": 6,
+      "fn": 2,
+      "tp": 26
+    },
+    "roc_auc_95ci": [
+      0.8976061600037892,
+      0.9956043956043955
+    ],
+    "calibration_table": [
+      {
+        "bin": "0.0-0.2",
+        "count": 18,
+        "mean_predicted": 0.09620099049814916,
+        "observed_rate": 0.0
+      },
+      {
+        "bin": "0.2-0.4",
+        "count": 8,
+        "mean_predicted": 0.29245551387058794,
+        "observed_rate": 0.125
+      },
+      {
+        "bin": "0.4-0.6",
+        "count": 7,
+        "mean_predicted": 0.48785966078144527,
+        "observed_rate": 0.2857142857142857
+      },
+      {
+        "bin": "0.6-0.8",
+        "count": 10,
+        "mean_predicted": 0.7007154807741236,
+        "observed_rate": 0.8
+      },
+      {
+        "bin": "0.8-1.0",
+        "count": 18,
+        "mean_predicted": 0.919997120146227,
+        "observed_rate": 0.9444444444444444
+      }
+    ]
+  },
+  "test_all_candidates_informational": {
+    "logistic_regression": {
+      "roc_auc": 0.9577922077922079,
+      "accuracy": 0.8688524590163934,
+      "precision": 0.8125,
+      "recall": 0.9285714285714286,
+      "f1": 0.8666666666666667
+    },
+    "decision_tree": {
+      "roc_auc": 0.8728354978354979,
+      "accuracy": 0.7704918032786885,
+      "precision": 0.71875,
+      "recall": 0.8214285714285714,
+      "f1": 0.7666666666666667
+    },
+    "knn": {
+      "roc_auc": 0.9664502164502164,
+      "accuracy": 0.9016393442622951,
+      "precision": 0.8666666666666667,
+      "recall": 0.9285714285714286,
+      "f1": 0.896551724137931
+    },
+    "svm_rbf": {
+      "roc_auc": 0.9567099567099568,
+      "accuracy": 0.9180327868852459,
+      "precision": 0.8709677419354839,
+      "recall": 0.9642857142857143,
+      "f1": 0.9152542372881356
+    },
+    "random_forest": {
+      "roc_auc": 0.9437229437229437,
+      "accuracy": 0.8852459016393442,
+      "precision": 0.8387096774193549,
+      "recall": 0.9285714285714286,
+      "f1": 0.8813559322033898
+    },
+    "gradient_boosting": {
+      "roc_auc": 0.9632034632034632,
+      "accuracy": 0.9016393442622951,
+      "precision": 0.8666666666666667,
+      "recall": 0.9285714285714286,
+      "f1": 0.896551724137931
+    }
+  },
+  "eligibility_rules": {
+    "min_auc_available": 0.7,
+    "min_auc_experimental": 0.6,
+    "max_ece_for_probability": 0.1,
+    "single_feature_auc_flag": 0.95,
+    "missingness_auc_flag": 0.75,
+    "perfect_separation_flag": 0.99
+  },
+  "plots": [
+    "roc_curve.png",
+    "calibration_curve.png",
+    "confusion_matrix.png"
+  ],
+  "environment": {
+    "python": "3.10.11",
+    "scikit_learn": "1.7.2",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "joblib": "1.6.0"
+  }
+}

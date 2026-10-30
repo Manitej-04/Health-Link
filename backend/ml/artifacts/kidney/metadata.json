@@ -1,0 +1,383 @@
+{
+  "disease": "kidney",
+  "name": "Chronic Kidney Disease",
+  "trained_at": "2026-10-30T17:26:15+00:00",
+  "status": "available",
+  "status_reasons": [],
+  "data_caveats": [
+    "Single raw features separate the classes almost perfectly: hemo, pcv (AUC >= 0.95)",
+    "The number of missing values per record predicts the label (AUC 0.824); records were likely collected differently for each class",
+    "Held-out ROC-AUC 1.000 indicates near-perfect separation"
+  ],
+  "probability_supported": true,
+  "probability_reason": "Sigmoid-calibrated probabilities met the criteria on held-out data (ECE 0.078 <= 0.1, Brier skill score 0.919 > 0)",
+  "features": [
+    "age",
+    "bp",
+    "sg",
+    "al",
+    "su",
+    "rbc",
+    "pc",
+    "pcc",
+    "ba",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wc",
+    "rc",
+    "htn",
+    "dm",
+    "cad",
+    "appet",
+    "pe",
+    "ane"
+  ],
+  "model_sha256": "82778faf2f532ce13f8ab2a3332a46c623c90fcd37feba7ffbfbf7fe2782a95a",
+  "algorithm": "logistic_regression",
+  "algorithm_name": "Logistic Regression",
+  "calibration": "sigmoid (Platt) via CalibratedClassifierCV, cv=5, fit on training split only",
+  "decision_threshold": 0.5,
+  "dataset": {
+    "description": "UCI Chronic Kidney Disease (400 patients)",
+    "file": "kidney_disease.csv",
+    "sha256": "aaeb0712557ec913a61400c216b45b02cc3d0ff0ad89d3ce3112960c7271f3bf",
+    "rows_raw": 400,
+    "rows_used": 400,
+    "train_rows": 320,
+    "test_rows": 80,
+    "train_prevalence": 0.625
+  },
+  "integrity": {
+    "flags": [
+      "Single raw features separate the classes almost perfectly: hemo, pcv (AUC >= 0.95)",
+      "The number of missing values per record predicts the label (AUC 0.824); records were likely collected differently for each class",
+      "Held-out ROC-AUC 1.000 indicates near-perfect separation"
+    ],
+    "exact_duplicate_rows": 0,
+    "conflicting_label_duplicates": 0,
+    "class_counts": {
+      "0": 150,
+      "1": 250
+    },
+    "missing_percent": {
+      "age": 2.2,
+      "bp": 3.0,
+      "sg": 11.8,
+      "al": 11.5,
+      "su": 12.2,
+      "rbc": 38.0,
+      "pc": 16.2,
+      "pcc": 1.0,
+      "ba": 1.0,
+      "bgr": 11.0,
+      "bu": 4.8,
+      "sc": 4.2,
+      "sod": 22.0,
+      "pot": 22.5,
+      "hemo": 13.0,
+      "pcv": 17.8,
+      "wc": 26.5,
+      "rc": 32.8,
+      "htn": 0.5,
+      "dm": 0.5,
+      "cad": 0.5,
+      "appet": 0.2,
+      "pe": 0.2,
+      "ane": 0.2
+    },
+    "single_feature_auc": {
+      "hemo": 0.969,
+      "pcv": 0.952,
+      "rc": 0.924,
+      "sc": 0.923,
+      "sg": 0.921,
+      "al": 0.871,
+      "sod": 0.803,
+      "htn": 0.794,
+      "dm": 0.774,
+      "bu": 0.751,
+      "bgr": 0.747,
+      "rbc": 0.72,
+      "pc": 0.696,
+      "bp": 0.666,
+      "age": 0.665,
+      "appet": 0.664,
+      "pe": 0.652,
+      "su": 0.648,
+      "ane": 0.62,
+      "wc": 0.614,
+      "pcc": 0.584,
+      "cad": 0.568,
+      "ba": 0.544,
+      "pot": 0.503
+    },
+    "missingness_auc": 0.824,
+    "mean_missing_per_row_by_class": {
+      "0": 0.69,
+      "1": 3.64
+    }
+  },
+  "cv": {
+    "scheme": "RepeatedStratifiedKFold(5 folds x 3 repeats), training split only",
+    "results": {
+      "logistic_regression": {
+        "roc_auc": {
+          "mean": 0.9999305555555557,
+          "std": 0.00025983731852595335
+        },
+        "accuracy": {
+          "mean": 0.9947916666666666,
+          "std": 0.010925092168439078
+        },
+        "f1": {
+          "mean": 0.9957800497673915,
+          "std": 0.008852770672479884
+        },
+        "recall": {
+          "mean": 0.9933333333333333,
+          "std": 0.014337208778404392
+        },
+        "precision": {
+          "mean": 0.9983333333333333,
+          "std": 0.00623609564462324
+        }
+      },
+      "decision_tree": {
+        "roc_auc": {
+          "mean": 0.9772222222222221,
+          "std": 0.021213942265656715
+        },
+        "accuracy": {
+          "mean": 0.9604166666666667,
+          "std": 0.01495072926500763
+        },
+        "f1": {
+          "mean": 0.9681564006883894,
+          "std": 0.012067089185104699
+        },
+        "recall": {
+          "mean": 0.9633333333333332,
+          "std": 0.020138409955990942
+        },
+        "precision": {
+          "mean": 0.9735137719219875,
+          "std": 0.018498934331464094
+        }
+      },
+      "knn": {
+        "roc_auc": {
+          "mean": 0.9997916666666666,
+          "std": 0.0005641693336552784
+        },
+        "accuracy": {
+          "mean": 0.953125,
+          "std": 0.03072475250781797
+        },
+        "f1": {
+          "mean": 0.96034468410948,
+          "std": 0.027194470183074426
+        },
+        "recall": {
+          "mean": 0.9249999999999999,
+          "std": 0.04915960401250875
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        }
+      },
+      "svm_rbf": {
+        "roc_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "accuracy": {
+          "mean": 0.9927083333333333,
+          "std": 0.00966001926614136
+        },
+        "f1": {
+          "mean": 0.9940711890078978,
+          "std": 0.007879737138149125
+        },
+        "recall": {
+          "mean": 0.9883333333333333,
+          "std": 0.015456030825826184
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        }
+      },
+      "random_forest": {
+        "roc_auc": {
+          "mean": 0.9988194444444444,
+          "std": 0.001652135729634739
+        },
+        "accuracy": {
+          "mean": 0.990625,
+          "std": 0.011121956512532616
+        },
+        "f1": {
+          "mean": 0.9925306037401677,
+          "std": 0.008880749540671277
+        },
+        "recall": {
+          "mean": 0.9949999999999999,
+          "std": 0.010000000000000009
+        },
+        "precision": {
+          "mean": 0.9901626016260162,
+          "std": 0.012049674653851284
+        }
+      },
+      "gradient_boosting": {
+        "roc_auc": {
+          "mean": 0.9992708333333333,
+          "std": 0.0015190724204324534
+        },
+        "accuracy": {
+          "mean": 0.9854166666666667,
+          "std": 0.014508737788733458
+        },
+        "f1": {
+          "mean": 0.9884146150884855,
+          "std": 0.01149207782843079
+        },
+        "recall": {
+          "mean": 0.9916666666666666,
+          "std": 0.011785113019775804
+        },
+        "precision": {
+          "mean": 0.9853619821912505,
+          "std": 0.017258211956340017
+        }
+      }
+    }
+  },
+  "selection_rule": "highest mean CV ROC-AUC; simplest model within 0.01 preferred",
+  "test_metrics": {
+    "n": 80,
+    "accuracy": 0.975,
+    "majority_baseline_accuracy": 0.625,
+    "precision": 1.0,
+    "recall": 0.96,
+    "specificity": 1.0,
+    "f1": 0.9795918367346939,
+    "roc_auc": 1.0,
+    "brier": 0.019031640413230216,
+    "brier_reference": 0.234375,
+    "brier_skill_score": 0.9187983342368844,
+    "ece": 0.07753467005767448,
+    "confusion_matrix": {
+      "tn": 30,
+      "fp": 0,
+      "fn": 2,
+      "tp": 48
+    },
+    "roc_auc_95ci": [
+      0.9999999999999999,
+      1.0
+    ],
+    "calibration_table": [
+      {
+        "bin": "0.0-0.2",
+        "count": 27,
+        "mean_predicted": 0.08031320477176136,
+        "observed_rate": 0.0
+      },
+      {
+        "bin": "0.2-0.4",
+        "count": 3,
+        "mean_predicted": 0.2784493303557823,
+        "observed_rate": 0.0
+      },
+      {
+        "bin": "0.4-0.6",
+        "count": 2,
+        "mean_predicted": 0.4505698493917263,
+        "observed_rate": 1.0
+      },
+      {
+        "bin": "0.6-0.8",
+        "count": 4,
+        "mean_predicted": 0.7223781809845706,
+        "observed_rate": 1.0
+      },
+      {
+        "bin": "0.8-1.0",
+        "count": 44,
+        "mean_predicted": 0.9775086021038457,
+        "observed_rate": 1.0
+      }
+    ]
+  },
+  "test_all_candidates_informational": {
+    "logistic_regression": {
+      "roc_auc": 1.0,
+      "accuracy": 0.9875,
+      "precision": 1.0,
+      "recall": 0.98,
+      "f1": 0.98989898989899
+    },
+    "decision_tree": {
+      "roc_auc": 0.988,
+      "accuracy": 0.975,
+      "precision": 0.98,
+      "recall": 0.98,
+      "f1": 0.98
+    },
+    "knn": {
+      "roc_auc": 1.0,
+      "accuracy": 0.975,
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1": 0.9795918367346939
+    },
+    "svm_rbf": {
+      "roc_auc": 1.0,
+      "accuracy": 0.9875,
+      "precision": 1.0,
+      "recall": 0.98,
+      "f1": 0.98989898989899
+    },
+    "random_forest": {
+      "roc_auc": 1.0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "gradient_boosting": {
+      "roc_auc": 1.0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "eligibility_rules": {
+    "min_auc_available": 0.7,
+    "min_auc_experimental": 0.6,
+    "max_ece_for_probability": 0.1,
+    "single_feature_auc_flag": 0.95,
+    "missingness_auc_flag": 0.75,
+    "perfect_separation_flag": 0.99
+  },
+  "plots": [
+    "roc_curve.png",
+    "calibration_curve.png",
+    "confusion_matrix.png"
+  ],
+  "environment": {
+    "python": "3.10.11",
+    "scikit_learn": "1.7.2",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "joblib": "1.6.0"
+  }
+}

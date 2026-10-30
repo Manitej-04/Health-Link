@@ -1,0 +1,17 @@
+file,disease,patient,dataset_row,adjusted,expected_band,probability,prediction,ocr_png,ocr_pdf
+heart/heart_01_low,Heart Disease,Aarav Sample,149,,LOW,7.0%,No heart disease indicated,all fields read correctly,all fields read correctly
+heart/heart_02_moderate,Heart Disease,Diya Demo,172,,MODERATE,44.6%,No heart disease indicated,all fields read correctly,all fields read correctly
+heart/heart_03_high,Heart Disease,Rohan Testcase,174,,HIGH,92.8%,Heart disease indicated,all fields read correctly,all fields read correctly
+heart/heart_04_moderate,Heart Disease,Ananya Example,60,,MODERATE,62.1%,Heart disease indicated,all fields read correctly,all fields read correctly
+diabetes/diabetes_01_low,Diabetes,Kabir Sample,514,,LOW,7.0%,No diabetes indicated,all fields read correctly,all fields read correctly
+diabetes/diabetes_02_moderate,Diabetes,Isha Demo,428,,MODERATE,44.9%,No diabetes indicated,all fields read correctly,all fields read correctly
+diabetes/diabetes_03_high,Diabetes,Vihaan Testcase,487,,HIGH,92.2%,Diabetes indicated,all fields read correctly,all fields read correctly
+diabetes/diabetes_04_moderate,Diabetes,Meera Example,693,,MODERATE,62.1%,Diabetes indicated,all fields read correctly,all fields read correctly
+kidney/kidney_01_low,Chronic Kidney Disease,Aarav Sample,254,,LOW,7.0%,No chronic kidney disease indicated,all fields read correctly,all fields read correctly
+kidney/kidney_02_moderate,Chronic Kidney Disease,Diya Demo,266,"hemo=12.2, pcv=38",MODERATE,45.4%,No chronic kidney disease indicated,all fields read correctly,all fields read correctly
+kidney/kidney_03_high,Chronic Kidney Disease,Rohan Testcase,181,,HIGH,93.8%,Chronic kidney disease indicated,all fields read correctly,all fields read correctly
+kidney/kidney_04_moderate,Chronic Kidney Disease,Ananya Example,266,"hemo=11.0, pcv=34",MODERATE,63.0%,Chronic kidney disease indicated,all fields read correctly,all fields read correctly
+liver/liver_01_moderate,Liver Disease,Kabir Sample,435,,MODERATE,37.7%,No liver disease indicated,all fields read correctly,all fields read correctly
+liver/liver_02_moderate,Liver Disease,Isha Demo,334,,MODERATE,45.0%,No liver disease indicated,all fields read correctly,all fields read correctly
+liver/liver_03_moderate,Liver Disease,Vihaan Testcase,387,,MODERATE,62.1%,Liver disease indicated,all fields read correctly,all fields read correctly
+liver/liver_04_high,Liver Disease,Meera Example,89,,HIGH,93.0%,Liver disease indicated,all fields read correctly,all fields read correctly
