@@ -68,23 +68,6 @@ Health-Link sets out to build a disease-risk tool that is useful and well engine
 | Private, paginated history and a print-ready PDF report | **Disease analysis:** per-disease totals, positive rate, average probability, risk-band and daily-activity charts |
 | Dashboard with charts of their own results | **Model performance:** held-out metrics for every model |
 
-## System architecture
-
-```mermaid
-flowchart LR
-    U[Patient / Admin<br/>browser] -->|HTTP(S), JWT cookie + CSRF| FE[React 19 + Vite<br/>SPA]
-    FE -->|REST /api| BE[Flask API]
-    BE --> AUTH[Auth & roles<br/>bcrypt, JWT]
-    BE --> VAL[Schema validation]
-    BE --> ML[Model registry<br/>4 calibrated pipelines]
-    BE --> OCR[OCR service<br/>OpenCV + Tesseract]
-    BE --> RISK[Shared risk-band service]
-    BE --> DB[(SQLite / MySQL<br/>users, predictions)]
-    TR[Offline training pipeline<br/>scikit-learn] -->|joblib + metadata + checksum| ML
-    DS[(Public datasets<br/>UCI, Pima, ILPD)] --> TR
-```
-
-A single **feature schema** (`backend/ml/feature_specs.py`) drives the training pipeline, the server-side validation and the frontend forms, so the form a user fills in always matches what the model was trained on.
 
 ## Technology stack
 
@@ -205,16 +188,6 @@ Details: [docs/SECURITY.md](docs/SECURITY.md).
 - Email verification, password reset and an audit log of admin access.
 - Cloud deployment with HTTPS, a production WSGI server and Redis-backed rate limiting.
 - A mobile app and multilingual OCR.
-
-## Project team
-
-| Name | Roll number | Role |
-|---|---|---|
-| *Your name* | *Roll no.* | *e.g. ML & backend* |
-| *Team member* | *Roll no.* | *e.g. Frontend & OCR* |
-
-**Guide:** *Prof. Name, Department of …*
-**Institution:** *College name, University* · Academic year 2026–27
 
 ## Acknowledgements
 
